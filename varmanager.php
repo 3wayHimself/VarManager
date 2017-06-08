@@ -47,6 +47,10 @@ class VarManager {
 
 		$Array = json_decode($Content, true);
 
+		if ($this->Encrypt == true) {
+			$Variable = base64_encode($Variable);
+		}
+
 		if (isset($Array[$Variable])) {
 			return true;
 		} else {
